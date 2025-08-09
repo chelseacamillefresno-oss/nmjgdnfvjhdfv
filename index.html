@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Velvet Vault — Private NSFW Hub</title>
+  <meta name="description" content="A private NSFW gallery with dynamic pink/black gradients, animated collages, and featured drops." />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect fill='%230a0a0b' width='64' height='64'/><circle cx='32' cy='32' r='18' fill='%23f472b6'/></svg>">
+  <!-- Tailwind CDN (for utility classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ink: '#e5e7eb',
+            dim: '#a1a1aa',
+            panel: '#101013',
+            panel2: '#141419',
+            pinky: {
+              400: '#f472b6',
+              500: '#ec4899',
+              600: '#db2777'
+            },
+            fuchsia: {
+              500: '#d946ef',
+              600: '#c026d3'
+            },
+            rose: {
+              400: '#fb7185',
+              500: '#f43f5e'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 3px rgba(236, 72, 153, 0.35)'
+          },
+          fontFamily: {
+            display: ['Inter', 'system-ui', 'ui-sans-serif', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom theme/animation styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="grain bg-[#0a0a0b] text-ink antialiased min-h-screen">
+  <!-- Header -->
+  <header class="header-blur sticky top-0 z-40">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-4 py-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-pinky-600 to-fuchsia-600 grid place-items-center shadow-lg">
+            <span class="text-lg font-bold">NC</span>
+          </div>
+          <span class="font-semibold tracking-tight text-xl gradient-text">NightClub Main</span>
+        </a>
+
+        <nav class="ml-6 hidden md:flex items-center gap-1">
+          <a href="index.html" class="px-3 py-2 rounded-lg text-sm text-ink hover:bg-white/5 border border-white/10">Home</a>
+          <a href="sets.html" class="px-3 py-2 rounded-lg text-sm text-ink hover:bg-white/5 border border-white/10">Sets</a>
+          <a href="https://linktr.ee/NightClubMain" target="_blank" rel="noopener" class="ml-2 px-3 py-2 rounded-lg text-sm btn-soft border border-white/10 inline-flex items-center gap-2 shine">
+            Join Private Group
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M10 7h7v7"/></svg>
+          </a>
+        </nav>
+
+        <!-- search removed per request -->
+
+        <a href="sets.html" class="md:hidden inline-flex items-center gap-2 px-3 py-2 rounded-lg btn-primary text-sm border">
+          Explore
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M10 7h7v7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="bg-aurora">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="py-12 md:py-16 grid md:grid-cols-2 gap-8 items-center">
+          <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full badge-18 text-xs mb-3 reveal">
+              <span class="dot"></span>
+              NSFW · 18+ only
+            </div>
+            <h1 class="font-display text-3xl md:text-5xl font-extrabold leading-tight reveal">
+              NIGHTCLUB <span class="gradient-text">MAIN</span>
+            </h1>
+            <p class="mt-4 text-dim reveal gradient-text">
+              UNRELEASED SETS<br>
+              STRICTLY NO WATERMARKS<br>
+              ALL CONTENT DOWNLOADABLE<br>
+              OPEN REQUESTS<br>
+              ONE-TIME PAYMENT<br>
+              LIFETIME ACCESS<br>
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-3 reveal">
+              <a href="sets.html" class="shine inline-flex items-center gap-2 rounded-xl px-4 py-2.5 font-medium btn-primary border">
+                Enter Vault
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M10 7h7v7"/>
+                </svg>
+              </a>
+              <a href="https://linktr.ee/NightClubMain" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 font-medium btn-soft border border-white/10">
+                Join Private Group
+              </a>
+            </div>
+            <div class="mt-6 hr-soft reveal"></div>
+          </div>
+          <div class="relative">
+            <div class="rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.02)] p-3 md:p-4 reveal">
+              <div class="rounded-2xl ring-1 ring-white/10 overflow-hidden grid place-items-center bg-[#0b0b0b] p-2">
+                <img src="https://i.postimg.cc/hvFqNYn2/nightclub-icon.png" alt="NightClub Main Logo" class="mx-auto w-full h-auto object-contain" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="py-10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-4 mb-4">
+          <div>
+            <h2 class="text-xl font-semibold reveal">Featured drops</h2>
+            <p class="text-sm text-dim reveal">Public teasers — full sets inside the private group</p>
+          </div>
+          <a href="sets.html" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-lg btn-soft border border-white/10 reveal">See all</a>
+        </div>
+
+        <div id="featuredGrid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Promo -->
+    <section class="footer-gradient">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 grid md:grid-cols-3 gap-6 items-center">
+          <div class="md:col-span-2">
+            <h3 class="text-lg font-semibold">Unlock everything in the Private Group</h3>
+          </div>
+          <div class="flex md:justify-end">
+            <a href="https://linktr.ee/NightClubMain" target="_blank" rel="noopener" class="shine inline-flex items-center gap-2 rounded-xl px-4 py-2.5 font-medium btn-primary border">
+              Subscribe & Join
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M10 7h7v7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Card Template -->
+  <template id="cardTemplate">
+    <article class="card rounded-2xl border overflow-hidden transition-all reveal">
+      <div class="relative thumb">
+        <div class="absolute inset-0" data-collage></div>
+        <div class="absolute left-2 top-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] badge-18">
+          18+ NSFW
+        </div>
+        <div class="absolute right-2 bottom-2 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/70 text-white">
+          <span data-duration>00:00</span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none"></div>
+        <div class="absolute inset-0 grid place-items-center opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 border border-white/20 backdrop-blur text-sm">
+            Preview
+          </span>
+        </div>
+      </div>
+      <div class="p-3 space-y-1.5">
+        <h3 class="font-semibold leading-snug line-clamp-2"></h3>
+        <p class="text-sm text-dim line-clamp-2" data-desc></p>
+        <div class="text-xs text-dim flex items-center gap-2">
+          <span class="inline-flex items-center gap-1 opacity-80">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20a7 7 0 1 0-14 0"/></svg>
+            Private set
+          </span>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- Scripts -->
+  <script>
+    ;(() => {
+      const $ = (sel, ctx=document) => ctx.querySelector(sel);
+      const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+      // Sample featured items (teasers)
+      const featured = [
+        {
+          id: crypto.randomUUID(),
+          title: 'M** D*l* Cr*z',
+          desc: 'NightClub Main',
+          duration: '—',
+          thumbs: [
+            'https://i.postimg.cc/XJ62pnpW/photo-2025-08-08-19-35-27.jpg',
+            'https://i.postimg.cc/9QSgHd2r/photo-2025-08-08-19-35-29.jpg',
+            'https://i.postimg.cc/MGQP6nZt/photo-2025-08-08-19-35-41.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*11
+        },
+        {
+          id: crypto.randomUUID(),
+          title: 'Xh**n* Q**m*r*',
+          desc: 'NightClub Main',
+          duration: '—',
+          thumbs: [
+            'https://i.postimg.cc/QdjMD7Xk/photo-2025-08-08-19-22-56.jpg',
+            'https://i.postimg.cc/RZGZZ0hr/photo-2025-08-08-19-22-55.jpg',
+            'https://i.postimg.cc/bNxv4gjw/photo-2025-08-08-19-22-58.jpg',
+            'https://i.postimg.cc/5Nd0PGTr/photo-2025-08-08-19-23-00.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*12
+        },
+        {
+          id: crypto.randomUUID(),
+          title: 'D**r**n G*nz*l*s',
+          desc: 'NightClub Main',
+          duration: '—',
+          thumbs: [
+            'https://i.postimg.cc/zDsCCqNH/photo-2025-08-08-20-00-13.jpg',
+            'https://i.postimg.cc/13HD16qD/photo-2025-08-08-20-00-11.jpg',
+            'https://i.postimg.cc/3Y09dchD/photo-2025-08-08-20-00-17.jpg',
+            'https://i.postimg.cc/8PLhwxkK/photo-2025-08-08-20-00-18.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*9
+        },
+        {
+          id: crypto.randomUUID(),
+          title: 'Rh**n* De G*zm*n',
+          desc: 'NightClub Main',
+          duration: '—',
+          thumbs: [
+            'https://i.postimg.cc/qvNTCtfy/photo-2025-08-08-21-15-27.jpg',
+            'https://i.postimg.cc/3wpQnPxw/photo-2025-08-08-21-15-28.jpg',
+            'https://i.postimg.cc/Gm61PcrN/photo-2025-08-08-21-15-34.jpg',
+            'https://i.postimg.cc/65jK3rPB/Rhian-De-Guzman-30-1-mp4-snapshot-00-03-648.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*2
+        }
+      ];
+
+      function formatDate(ts) {
+        const d = new Date(ts);
+        return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+
+      function buildCollage(thumbs) {
+        // Use only image URLs for thumbnail grids (exclude videos)
+        const all = Array.isArray(thumbs) ? thumbs : [];
+        const isVideo = (u) => /\.(mp4|webm|ogg|mov)(\?|$)/i.test(u);
+        const sources = all.filter(u => !isVideo(u));
+        const fallback = 'https://picsum.photos/seed/fallback/800/450';
+        const imgs = (sources.length ? sources : [fallback]).slice(0, 6);
+        const n = imgs.length;
+        const imgTag = (u, extra = '') => `
+          <img src="${u}" alt="" class="w-full h-full object-cover block ${extra}"
+               loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='${fallback}';">
+        `;
+ 
+        if (n <= 1) {
+          return `
+            ${imgTag(imgs[0])}
+          `;
+        }
+        if (n === 2) {
+          return `
+            <div class="grid grid-cols-2 gap-1 h-full">
+              ${imgs.map(u => imgTag(u)).join('')}
+            </div>
+          `;
+        }
+        if (n === 3) {
+          return `
+            <div class="grid grid-cols-3 grid-rows-2 gap-1 h-full">
+              <div class="col-span-2 row-span-2">${imgTag(imgs[0])}</div>
+              <div class="col-span-1 row-span-1">${imgTag(imgs[1])}</div>
+              <div class="col-span-1 row-span-1">${imgTag(imgs[2])}</div>
+            </div>
+          `;
+        }
+        if (n === 4) {
+          return `
+            <div class="grid grid-cols-2 grid-rows-2 gap-1 h-full">
+              ${imgs.map(u => imgTag(u)).join('')}
+            </div>
+          `;
+        }
+        // 5 or 6
+        return `
+          <div class="grid grid-cols-3 grid-rows-2 gap-1 h-full">
+            <div class="col-span-2 row-span-2">${imgTag(imgs[0])}</div>
+            <div class="col-span-1 row-span-1">${imgTag(imgs[1] || imgs[0])}</div>
+            <div class="col-span-1 row-span-1">${imgTag(imgs[2] || imgs[1] || imgs[0])}</div>
+            <div class="relative">
+              ${imgTag(imgs[3] || imgs[1] || imgs[0])}
+            </div>
+            <div class="col-span-1 row-span-1">${imgTag(imgs[4] || imgs[1] || imgs[0])}</div>
+          </div>
+        `;
+      }
+
+      // Hover cycling removed
+
+      let io;
+      function setupRevealObserver() {
+        io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.2 });
+      }
+
+      function renderFeatured(list) {
+        const grid = $('#featuredGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        const tpl = $('#cardTemplate');
+
+        list.forEach(item => {
+          const node = tpl.content.cloneNode(true);
+          const card = node.querySelector('article');
+          node.querySelector('[data-collage]').innerHTML = buildCollage(item.thumbs || []);
+          node.querySelector('h3').textContent = item.title;
+          const dEl = node.querySelector('[data-duration]'); if (dEl) dEl.textContent = item.duration || '—';
+          const descEl = node.querySelector('[data-desc]'); if (descEl) descEl.textContent = item.desc || '';
+          // date removed
+          card.addEventListener('click', () => {
+            // Navigate to sets page where the full locked set resides
+            location.href = 'sets.html';
+          });
+          // hover cycling removed
+          grid.appendChild(node);
+          const appended = grid.lastElementChild;
+          if (appended) {
+            appended.classList.add('group');
+            if (io) io.observe(appended);
+          }
+        });
+
+        if (!list.length) {
+          grid.innerHTML = '<div class="col-span-full text-center text-dim py-10">Nothing featured yet.</div>';
+        }
+      }
+
+      // search removed per request
+
+      // Init
+      setupRevealObserver();
+      $$('.reveal').forEach(el => io && io.observe(el));
+      renderFeatured(featured);
+    })();
+  </script>
+</body>
+</html>

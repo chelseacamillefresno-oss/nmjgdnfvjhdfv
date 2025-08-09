@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Velvet Vault — Sets</title>
+  <meta name="description" content="Private NSFW sets — photos and videos with dynamic collages and animated gradients." />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect fill='%230a0a0b' width='64' height='64'/><circle cx='32' cy='32' r='18' fill='%23f472b6'/></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ink: '#e5e7eb',
+            dim: '#a1a1aa',
+            panel: '#101013',
+            panel2: '#141419',
+            pinky: { 600: '#db2777' },
+            fuchsia: { 600: '#c026d3' }
+          },
+          boxShadow: { glow: '0 0 0 3px rgba(236,72,153,0.35)' },
+          fontFamily: { display: ['Inter', 'system-ui', 'ui-sans-serif', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="grain bg-[#0a0a0b] text-ink antialiased min-h-screen">
+  <!-- Header -->
+  <header class="header-blur sticky top-0 z-40">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-4 py-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-pinky-600 to-fuchsia-600 grid place-items-center shadow-lg">
+            <span class="text-lg font-bold">NC</span>
+          </div>
+          <span class="font-semibold tracking-tight text-xl gradient-text">NightClub Main</span>
+        </a>
+
+        <nav class="ml-6 hidden md:flex items-center gap-1">
+          <a href="index.html" class="px-3 py-2 rounded-lg text-sm hover:bg-white/5 border border-white/10">Home</a>
+          <a href="sets.html" class="px-3 py-2 rounded-lg text-sm hover:bg-white/5 border border-white/10 bg-white/5">Sets</a>
+          <a href="https://linktr.ee/NightClubMain" target="_blank" rel="noopener" class="ml-2 px-3 py-2 rounded-lg text-sm btn-soft border border-white/10 inline-flex items-center gap-2 shine">
+            Join Private Group
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M10 7h7v7"/></svg>
+          </a>
+        </nav>
+
+        <div class="ml-auto w-full max-w-md hidden md:block">
+          <div class="relative">
+            <input id="search" type="text" placeholder="Search sets..."
+                   class="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 pl-10 placeholder:text-dim focus:outline-none focus:shadow-glow" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 -translate-y-1/2 text-dim" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="11" cy="11" r="7" stroke-width="1.5"/><path d="M20 20l-3-3" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <a href="https://linktr.ee/NightClubMain" target="_blank" rel="noopener" class="md:hidden inline-flex items-center gap-2 px-3 py-2 rounded-lg btn-primary text-sm border">
+          Join
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M10 7h7v7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-aurora">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="py-10 md:py-14">
+        <div class="flex items-center gap-2 text-xs mb-3 reveal">
+          <div class="dot"></div>
+          <span class="badge-18 px-2 py-0.5 rounded-md">NSFW · 18+ only</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold reveal"><span class="gradient-text">NIGHTCLUB MAIN SETS</span></h1>
+        <p class="text-dim mt-2 reveal">Teasers are visible here. Full sets and videos are locked and available via subscription in the private group.</p>
+
+        <!-- CTA only (filters removed) -->
+        <div class="mt-5 flex flex-wrap items-center gap-2 reveal">
+          <a href="https://linktr.ee/NightClubMain" target="_blank" rel="noopener" class="mx-auto shine animate-pulse inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm btn-primary border transition-transform hover:scale-105">
+            Subscribe to unlock
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M10 7h7v7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <main class="py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div id="setsGrid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Card Template -->
+  <template id="cardTemplate">
+    <article class="group card rounded-2xl border overflow-hidden transition-all reveal">
+      <div class="relative thumb">
+        <div class="absolute inset-0" data-collage></div>
+        <div class="absolute left-2 top-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] badge-18">
+          18+ NSFW
+        </div>
+        <div class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 border border-white/20  text-sm">
+            <span data-cta>Preview</span>
+          </span>
+        </div>
+      </div>
+      <div class="p-3 space-y-1.5">
+        <h3 class="font-semibold leading-snug line-clamp-2"></h3>
+        <p class="text-sm text-dim line-clamp-2" data-desc></p>
+      </div>
+    </article>
+  </template>
+
+  <!-- Viewer Modal -->
+  <div id="viewer" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80"></div>
+    <div class="relative h-full w-full flex items-center justify-center p-4">
+      <div class="w-full max-w-5xl rounded-2xl border border-white/10 bg-[#101013] shadow-2xl overflow-hidden">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-white/10">
+          <h3 id="viewerTitle" class="text-lg font-semibold">Preview</h3>
+          <button id="closeViewer" class="p-2 rounded-lg hover:bg-white/5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div id="viewerBody" class="p-4">
+          <!-- Injected: iframe for video or grid of images for photo set -->
+        </div>
+        <div id="viewerFoot" class="px-4 pb-4 pt-1 text-xs text-dim"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    ;(() => {
+      const $ = (sel, ctx=document) => ctx.querySelector(sel);
+      const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+      const privateGroupUrl = 'https://linktr.ee/NightClubMain';
+
+      // All sets locked, but previews are still allowed in the modal.
+      const sets = [
+        // Existing examples updated to unified description
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Sabrian Borromeo',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/ncn5Xt04/Sabrina-Mahinang-Nilalang-1.png',
+            'https://i.postimg.cc/ncTW7wP6/Sabrina-Mahinang-Nilalang-2.png',
+            'https://i.postimg.cc/fWcpWbjW/Sabrina-Mahinang-Nilalang-23.png',
+            'https://nightclub.playerp2p.com/#pzb61',
+            'https://nightclub.playerp2p.com/#otxcl',
+            'https://nightclub.playerp2p.com/#36eha',
+            'https://nightclub.playerp2p.com/#fqtxh',
+            'https://nightclub.playerp2p.com/#pzb6w'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Eliza D.',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/T1zZsynB/elisa-d-1.png',
+            'https://i.postimg.cc/fytG57Sx/elisa-d-2.png',
+            'https://nightclub.playerp2p.com/#wuqxy',
+            'https://nightclub.playerp2p.com/#ejaps',
+            'https://nightclub.playerp2p.com/#dfo5s'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Andrea Silang',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/zD6pTYzb/andreaa-1.png',
+            'https://i.postimg.cc/MZvdcpSJ/andreaa-2.png',
+            'https://nightclub.playerp2p.com/#ejatn',
+            'https://nightclub.playerp2p.com/#um8ve',
+            'https://nightclub.playerp2p.com/#8wfry',
+            'https://nightclub.playerp2p.com/#q8dsf',
+            'https://nightclub.playerp2p.com/#pzb1a'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Kai Nayumi',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/T3HrqSBs/nayumi-1.png',
+            'https://i.postimg.cc/TYfqRnrt/nayumi-2.png',
+            'https://i.postimg.cc/7ZL3zDt7/nayumi-3.png',
+            'https://i.postimg.cc/VLg955gm/nayumi-4.png',
+            'https://nightclub.playerp2p.com/#ygzv9',
+            'https://nightclub.playerp2p.com/#rb6jm',
+            'https://nightclub.playerp2p.com/#kypbu',
+            'https://nightclub.playerp2p.com/#ejagp',
+            'https://nightclub.playerp2p.com/#hayzz',
+            'https://nightclub.playerp2p.com/#8wftu'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Morisette',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/BvXRMrbP/Morisette-Mahinang-Nilalang-1.png',
+            'https://i.postimg.cc/Gm3Ws81Q/Morisette-Mahinang-Nilalang-2.png',
+            'https://i.postimg.cc/ZKmt4s7X/Morisette-Mahinang-Nilalang-3.png',
+            'https://i.postimg.cc/m2SxD3Kk/Morisette-Mahinang-Nilalang-4.png',
+            'https://nightclub.playerp2p.com/#nxzpt',
+            'https://nightclub.playerp2p.com/#pz8qc',
+            'https://nightclub.playerp2p.com/#pz8qm',
+            'https://nightclub.playerp2p.com/#36lxe',
+            'https://nightclub.playerp2p.com/#bvfdj'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Xh**n* Q**m*r*',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/QdjMD7Xk/photo-2025-08-08-19-22-56.jpg',
+            'https://i.postimg.cc/RZGZZ0hr/photo-2025-08-08-19-22-55.jpg',
+            'https://i.postimg.cc/bNxv4gjw/photo-2025-08-08-19-22-58.jpg',
+            'https://i.postimg.cc/bNxv4gjw/photo-2025-08-08-19-22-58.jpg',
+            'https://i.postimg.cc/5Nd0PGTr/photo-2025-08-08-19-23-00.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*12,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'video',
+          title: 'M** D*l* Cr*z',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/XJ62pnpW/photo-2025-08-08-19-35-27.jpg',
+            'https://i.postimg.cc/9QSgHd2r/photo-2025-08-08-19-35-29.jpg',
+            'https://i.postimg.cc/MGQP6nZt/photo-2025-08-08-19-35-41.jpg'
+          ],
+          embedUrl: '',
+          publishedAt: Date.now() - 1000*60*60*24*11,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Ashley V.',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/9QDGGs7n/photo-2025-08-08-19-09-00.jpg',
+            'https://i.postimg.cc/XYt9xxK7/photo-2025-08-08-19-09-04.jpg',
+            'https://i.postimg.cc/5tvLrvp5/photo-2025-08-08-19-09-06.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*10,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'video',
+          title: 'D**r**n G*nz*l*s',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/zDsCCqNH/photo-2025-08-08-20-00-13.jpg',
+            'https://i.postimg.cc/13HD16qD/photo-2025-08-08-20-00-11.jpg',
+            'https://i.postimg.cc/3Y09dchD/photo-2025-08-08-20-00-17.jpg',
+            'https://i.postimg.cc/8PLhwxkK/photo-2025-08-08-20-00-18.jpg'
+          ],
+          embedUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4',
+          publishedAt: Date.now() - 1000*60*60*24*9,
+          isLocked: true
+        },
+
+        // New requested sets (all photo previews, unified description)
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: '*ll*s*n V*ll*r*n',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/63G7qGyj/ALLISON-2-1-mp4-snapshot-00-01-160.jpg',
+            'https://i.postimg.cc/cCRrMy7f/ALLISON-5-1-mp4-snapshot-00-00-900.jpg',
+            'https://i.postimg.cc/qqVN3MKk/photo-2025-08-08-20-05-24.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*8,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Tr*c** N*c*l* M*n*l*',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/Wbp2fkTB/TRICIA-NICOLE-MANALO-19-1-mp4-snapshot-00-00-333.jpg',
+            'https://i.postimg.cc/Bnk467H3/TRICIA-NICOLE-MANALO-33-1-mp4-snapshot-00-08-790.jpg',
+            'https://i.postimg.cc/8zjTTgFw/TRICIA-NICOLE-MANALO-35-1-mp4-snapshot-00-01-464.jpg',
+            'https://i.postimg.cc/RVPMrZ0N/TRICIA-NICOLE-MANALO-8-1-mp4-snapshot-00-11-719.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*7,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Sofia Enriquez',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/xCYrJwdw/photo-2025-08-08-20-14-19.jpg',
+            'https://i.postimg.cc/NMx31d95/photo-2025-08-08-20-14-21.jpg',
+            'https://i.postimg.cc/zfTZfzqw/photo-2025-08-08-20-14-22.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*6,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Stephanie Lopez',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/4xCWxzyM/Stephanie-Lopez-2-1-mp4-snapshot-00-02-501.jpg',
+            'https://i.postimg.cc/qB5m9fTp/Stephanie-Lopez-3-1-mp4-snapshot-00-07-817.jpg',
+            'https://i.postimg.cc/VL07w7fn/Stephanie-Lopez-6-1-mp4-snapshot-00-00-303.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*5,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: '*y*sh* *pr*n*r**',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/c45rRmw9/ayesha-1-mp4-snapshot-00-01-916.jpg',
+            'https://i.postimg.cc/TPn1XvSF/ayesha-3-mp4-snapshot-00-00-075.jpg',
+            'https://i.postimg.cc/pLwr7L0K/ayesha-4-mp4-snapshot-00-00-052.jpg',
+            'https://i.postimg.cc/nhjM0D1H/ayesha-7-mp4-snapshot-00-03-398.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*4,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Janel M.',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/vZr4kSB0/photo-2025-08-08-21-09-21.jpg',
+            'https://i.postimg.cc/ncQjYLtb/11189440-637-D7e579a2dad903c49186a6b323dea-1-mp4-snapshot-00-00-277.jpg',
+            'https://i.postimg.cc/KcW3MMwD/11189443-6-Ac6ceb457da8143334e0f8182e3d92b-1-mp4-snapshot-00-00-274.jpg',
+            'https://i.postimg.cc/P5sL6ktL/11189505-Bcda3fcfd3484a31ec28628658643276-1-mp4-snapshot-00-00-481.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*3,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Rh**n* De G*zm*n',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/qvNTCtfy/photo-2025-08-08-21-15-27.jpg',
+            'https://i.postimg.cc/3wpQnPxw/photo-2025-08-08-21-15-28.jpg',
+            'https://i.postimg.cc/Gm61PcrN/photo-2025-08-08-21-15-34.jpg',
+            'https://i.postimg.cc/65jK3rPB/Rhian-De-Guzman-30-1-mp4-snapshot-00-03-648.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*2,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Nadine Sedano',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/ZRZ2jnQf/photo-2025-08-08-21-18-44.jpg',
+            'https://i.postimg.cc/0Qf34xR9/photo-2025-08-08-21-18-45.jpg',
+            'https://i.postimg.cc/XqYhSh4d/photo-2025-08-08-21-18-46.jpg',
+            'https://i.postimg.cc/7L1QCDLS/nadine-2-mp4-snapshot-00-00-099.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Alter Dane - 2025',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/XXMwcGHq/photo-2025-08-08-19-21-31.jpg',
+            'https://i.postimg.cc/tRsw-5KvG/photo-2025-08-08-19-21-33.jpg',
+            'https://i.postimg.cc/1tj0XYDp/photo-2025-08-08-19-21-36.jpg',
+            'https://i.postimg.cc/yx3mZXT2/photo-2025-08-08-19-21-37.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Vera Hill - Erica',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/1z4rSQq9/chi-night-1-mp4-snapshot-00-00-038.jpg',
+            'https://i.postimg.cc/SK57Nv6c/chi-night-5-mp4-snapshot-00-00-400.jpg',
+            'https://i.postimg.cc/SRb6cYts/photo-2025-08-08-21-26-01.jpg',
+            'https://i.postimg.cc/fL973fCp/photo-2025-08-08-21-26-03.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Marryantha - Tripozah',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/7LTJXYzT/9-SIck22-Ld-Om-mp4-snapshot-00-03-099.jpg',
+            'https://i.postimg.cc/RF56Y51p/photo-2025-08-08-21-30-13.jpg',
+            'https://i.postimg.cc/zvqLJCcn/photo-2025-08-08-21-30-15.jpg',
+            'https://i.postimg.cc/FRyd5WDr/photo-2025-08-08-21-30-17.jpg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        },
+        {
+          id: crypto.randomUUID(),
+          type: 'photo',
+          title: 'Shayna C.',
+          desc: 'NightClub Main',
+          thumbs: [
+            'https://i.postimg.cc/d3rLcZxr/480771697-1125891489303898-3327971070707811326-n.png',
+            'https://i.postimg.cc/k4kBHvf7/488074481-628128860186555-6649124437486960268-n.png',
+            'https://i.postimg.cc/JnysK23T/502179096-122178090974313329-1093918594944976431-n.png',
+            'https://nightclub.playerp2p.com/#5cmso',
+            'https://nightclub.playerp2p.com/#a9g1j',
+            'https://nightclub.playerp2p.com/#pzbju',
+            'https://nightclub.playerp2p.com/#otx1n',
+            'https://nightclub.playerp2p.com/#36eyg'
+          ],
+          publishedAt: Date.now() - 1000*60*60*24*1,
+          isLocked: true
+        }
+      ];
+
+      const state = {
+        filter: 'all',
+        query: ''
+      };
+      let io;
+      let keyNav = null;
+
+      function formatDate(ts) {
+        const d = new Date(ts);
+        return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+
+      function buildCollage(thumbs) {
+        // Only use actual image URLs for grid thumbnails (exclude videos and non-image links)
+        const all = Array.isArray(thumbs) ? thumbs : [];
+        const isImage = (u) => /\.(avif|webp|png|jpe?g|gif)(\?|$)/i.test(u);
+        const sources = all.filter(isImage).slice(0, 6);
+        const fallback = 'https://picsum.photos/seed/fallback/800/450';
+        if (!sources.length) sources.push(fallback);
+        const n = sources.length;
+        const imgTag = (u) => `
+          <img src="${u}" alt="" class="w-full h-full object-cover block"
+               loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='${fallback}';">
+        `;
+ 
+        if (n <= 1) {
+          return `
+            ${imgTag(sources[0])}
+          `;
+        }
+        if (n === 2) {
+          return `
+            <div class="grid grid-cols-2 gap-1 h-full">
+              ${sources.map(u => imgTag(u)).join('')}
+            </div>
+          `;
+        }
+        if (n === 3) {
+          return `
+            <div class="grid grid-cols-3 grid-rows-2 gap-1 h-full">
+              <div class="col-span-2 row-span-2">${imgTag(sources[0])}</div>
+              <div class="col-span-1 row-span-1">${imgTag(sources[1])}</div>
+              <div class="col-span-1 row-span-1">${imgTag(sources[2])}</div>
+            </div>
+          `;
+        }
+        if (n === 4) {
+          return `
+            <div class="grid grid-cols-2 grid-rows-2 gap-1 h-full">
+              ${sources.map(u => imgTag(u)).join('')}
+            </div>
+          `;
+        }
+        // 5 or 6
+        return `
+          <div class="grid grid-cols-3 grid-rows-2 gap-1 h-full">
+            <div class="col-span-2 row-span-2">${imgTag(sources[0])}</div>
+            <div class="col-span-1 row-span-1">${imgTag(sources[1] || sources[0])}</div>
+            <div class="col-span-1 row-span-1">${imgTag(sources[2] || sources[1] || sources[0])}</div>
+            <div class="relative">
+              ${imgTag(sources[3] || sources[1] || sources[0])}
+            </div>
+            <div class="col-span-1 row-span-1">${imgTag(sources[4] || sources[1] || sources[0])}</div>
+          </div>
+        `;
+      }
+
+      // Hover cycling removed
+
+      function setupRevealObserver() {
+        io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.2 });
+      }
+
+      function cardTemplateNode(item) {
+        const tpl = $('#cardTemplate');
+        const node = tpl.content.cloneNode(true);
+        const card = node.querySelector('article');
+        node.querySelector('[data-collage]').innerHTML = buildCollage(item.thumbs || []);
+        node.querySelector('h3').textContent = item.title;
+        const descEl = node.querySelector('[data-desc]'); if (descEl) descEl.textContent = item.desc || '';
+        const ctaEl = node.querySelector('[data-cta]');
+        if (ctaEl) ctaEl.textContent = 'Preview';
+        // click -> always open preview (even if locked)
+        card.addEventListener('click', () => {
+          openViewer(item);
+        });
+        return node;
+      }
+
+      function render() {
+        const grid = $('#setsGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        const q = state.query.toLowerCase().trim();
+        const list = sets.filter(s => {
+          const okType = state.filter === 'all' || s.type === state.filter;
+          const okQuery = !q || s.title.toLowerCase().includes(q) || (s.desc || '').toLowerCase().includes(q);
+          return okType && okQuery;
+        });
+        list.forEach(item => {
+          const node = cardTemplateNode(item);
+          grid.appendChild(node);
+          const appended = grid.lastElementChild;
+          if (appended) {
+            appended.classList.add('group');
+            if (io) io.observe(appended);
+          }
+        });
+        if (!list.length) {
+          grid.innerHTML = '<div class="col-span-full text-center text-dim py-10">No sets match your search.</div>';
+        }
+      }
+
+      // Viewer modal (previews allowed for all; full content gated)
+      function openViewer(item) {
+        $('#viewerTitle').textContent = item.title;
+        const body = $('#viewerBody');
+        const foot = $('#viewerFoot');
+        body.innerHTML = '';
+        foot.innerHTML = '';
+ 
+        // P2P embeds are shown as slides inside the carousel; no early return.
+ 
+        // Swipeable preview (retain natural image ratios; no grid)
+        const base = (item.images && item.images.length ? item.images : (item.thumbs || [])).slice(0, 12);
+        const embedFromField = (item.embedUrl && typeof item.embedUrl === 'string' && item.embedUrl.trim() !== '')
+          ? [item.embedUrl.trim()]
+          : [];
+        const p2pList = Array.isArray(item.thumbs)
+          ? item.thumbs.filter(u => /^https?:\/\/nightclub\.playerp2p\.com\/#/i.test(u))
+          : [];
+        let imgs = base.concat(
+          embedFromField.filter(u => !base.includes(u)),
+          p2pList.filter(u => !base.includes(u))
+        ).slice(0, 12);
+        const fallback = 'https://picsum.photos/seed/fallback/1200/800';
+        const isEmbed = (u) => /^https?:\/\/nightclub\.playerp2p\.com\/#/i.test(u);
+        const isVideo = (u) => /\.(mp4|webm|ogg|mov)(\?|$)/i.test(u);
+        const slideHTML = (u) => isEmbed(u) ? `
+                <div class="flex-none snap-center min-w-full grid place-items-center">
+                  <div class="w-full" style="aspect-ratio:16/9;">
+                    <iframe src="${u}" width="100%" height="100%" frameborder="0" allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade" loading="lazy"
+                            class="w-full h-full rounded-xl ring-1 ring-white/10 bg-black"></iframe>
+                  </div>
+                </div>
+              ` : isVideo(u) ? `
+                <div class="flex-none snap-center min-w-full grid place-items-center">
+                  <video src="${u}" class="max-h-[70vh] w-auto object-contain rounded-xl ring-1 ring-white/10 bg-black" muted autoplay loop playsinline controls preload="metadata"></video>
+                </div>
+              ` : `
+                <div class="flex-none snap-center min-w-full grid place-items-center">
+                  <img src="${u}" alt="" class="max-h-[70vh] w-auto object-contain rounded-xl ring-1 ring-white/10"
+                       loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                       onerror="this.onerror=null;this.src='${fallback}';">
+                </div>
+              `;
+        body.innerHTML = `
+          <div id="swipeWrap" class="relative">
+            <div class="no-scrollbar overflow-x-auto flex gap-3 snap-x snap-mandatory pb-2" style="scroll-behavior:smooth; -webkit-overflow-scrolling:touch; overscroll-behavior-x: contain; touch-action: pan-x pinch-zoom;">
+              ${imgs.map(u => slideHTML(u)).join('')}
+            </div>
+            <button type="button" data-nav="prev" class="absolute left-2 top-1/2 -translate-y-1/2 h-9 w-9 md:h-10 md:w-10 grid place-items-center rounded-full bg-black/40 hover:bg-white/10 border border-white/10 text-ink">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button type="button" data-nav="next" class="absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 md:h-10 md:w-10 grid place-items-center rounded-full bg-black/40 hover:bg-white/10 border border-white/10 text-ink">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+          <div class="text-sm text-dim mt-3">${item.desc || ''}</div>
+        `;
+ 
+        // Enable drag-to-swipe (mouse + touch) with snap after release
+        const wrap = $('#swipeWrap');
+        const scroller = wrap.querySelector('.no-scrollbar');
+        const slides = Array.from(scroller.children);
+ 
+        let currentIndex = Math.round(scroller.scrollLeft / Math.max(1, scroller.clientWidth));
+        const slideWidth = () => Math.max(1, scroller.clientWidth);
+        const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+ 
+        function goTo(i) {
+          currentIndex = clamp(i, 0, slides.length - 1);
+          scroller.scrollTo({ left: currentIndex * slideWidth(), behavior: 'smooth' });
+        }
+        function updateIndexFromScroll() {
+          currentIndex = Math.round(scroller.scrollLeft / slideWidth());
+        }
+ 
+        // Prevent browser image drag ghosting and set cursor affordance
+        scroller.style.cursor = 'grab';
+        slides.forEach(s => {
+          s.querySelector('img')?.addEventListener('dragstart', e => e.preventDefault());
+          s.querySelector('video')?.addEventListener('dragstart', e => e.preventDefault());
+        });
+ 
+        let isDown = false, startX = 0, startScroll = 0;
+        const endDrag = (e) => {
+          if (!isDown) return;
+          isDown = false;
+          try { scroller.releasePointerCapture(e.pointerId); } catch {}
+          scroller.style.cursor = 'grab';
+          // restore snap
+          scroller.style.scrollSnapType = 'x mandatory';
+          goTo(Math.round(scroller.scrollLeft / slideWidth()));
+        };
+        scroller.addEventListener('pointerdown', (e) => {
+          isDown = true;
+          try { scroller.setPointerCapture(e.pointerId); } catch {}
+          startX = e.clientX;
+          startScroll = scroller.scrollLeft;
+          scroller.style.cursor = 'grabbing';
+          // disable snap while dragging for fluid feel
+          scroller.style.scrollSnapType = 'none';
+        });
+        scroller.addEventListener('pointermove', (e) => {
+          if (!isDown) return;
+          const dx = e.clientX - startX;
+          scroller.scrollLeft = startScroll - dx;
+        });
+        scroller.addEventListener('pointerup', endDrag);
+        scroller.addEventListener('pointercancel', endDrag);
+        scroller.addEventListener('pointerleave', endDrag);
+        scroller.addEventListener('scroll', updateIndexFromScroll);
+        window.addEventListener('resize', () => goTo(currentIndex));
+ 
+        // Prev/Next buttons
+        const prevBtn = wrap.querySelector('[data-nav="prev"]');
+        const nextBtn = wrap.querySelector('[data-nav="next"]');
+        prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(currentIndex - 1); });
+        nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(currentIndex + 1); });
+ 
+        // Keyboard navigation
+        if (keyNav) document.removeEventListener('keydown', keyNav);
+        keyNav = (e) => {
+          if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+          else if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
+          else if (e.key === 'Escape') closeViewer();
+        };
+        document.addEventListener('keydown', keyNav);
+ 
+        foot.innerHTML = `
+          <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs btn-primary border shine" href="${privateGroupUrl}" target="_blank" rel="noopener">
+            Subscribe & Join
+          </a>
+        `;
+        $('#viewer').classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+      function closeViewer() {
+        $('#viewer').classList.add('hidden');
+        $('#viewerBody').innerHTML = '';
+        document.body.classList.remove('overflow-hidden');
+        if (keyNav) {
+          document.removeEventListener('keydown', keyNav);
+          keyNav = null;
+        }
+      }
+
+      // Events
+      $('#closeViewer').addEventListener('click', closeViewer);
+      $('#viewer').addEventListener('click', (e) => { if (e.target.id === 'viewer') closeViewer(); });
+
+      // Filters
+      $$('[data-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.filter = btn.dataset.filter;
+          // set active styles
+          $$('[data-filter]').forEach(b => b.className = 'px-3 py-1.5 rounded-full text-sm border bg-white/5 border-white/10');
+          btn.className = 'px-3 py-1.5 rounded-full text-sm border bg-gradient-to-r from-[#db2777]/20 to-[#c026d3]/20 border-white/10';
+          render();
+        });
+      });
+
+      // Search
+      $('#search')?.addEventListener('input', (e) => {
+        state.query = e.target.value || '';
+        render();
+      });
+
+      // Init
+      setupRevealObserver();
+      $$('.reveal').forEach(el => io && io.observe(el));
+      render();
+    })();
+  </script>
+</body>
+</html>
